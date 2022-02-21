@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1d1d1d;
+    min-height: 100vh;
+}
+.card{
+    width: 320px;
+    height: 450px;
+    color: white;
+    background: #302f2f;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:before{
+    content: '';
+    background: #9bdc28;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: circle(150px at 80% 20%);
+    transition: .5s ease-in-out;
+}
+
+.card:hover:before{
+    clip-path: circle(300px at 80% -20%);
+}
+
+.card:after{
+    content: 'Nike';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.08);
+}
+
+.card__imgBox{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.card:hover .card__imgBox {
+    top: 0%;
+    transform: translateY(0%);
+}
+
+.card__imgBox-img{
+    width: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(25deg);
+}
+
+.card__bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.card:hover .card__bottom{
+    height: 210px;
+}
+.card__bottom-title{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+}
+.card__bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 200%;
+}
+.card__bottom-desc{
+    display: flex;
+    margin: 0 1rem;
+}
+
+.card__bottom-desc h3{
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.card__bottom-desc span{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    font-size: .9rem;
+}

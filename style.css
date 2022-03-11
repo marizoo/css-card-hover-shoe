@@ -31,20 +31,20 @@
     left: 0;
     height: 100%;
     width: 100%;
-    clip-path: circle(150px at 80% 20%);
-    transition: .5s ease-in-out;
+    clip-path: circle(150px at 80% 15%);
+    transition: .5s;
 }
 
 .card:hover:before{
-    clip-path: circle(300px at 80% -20%);
+    clip-path: circle(300px at 85% -10%);
 }
 
 .card:after{
     content: 'Nike';
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: -20%;
-    font-size: 12em;
+    font-size: 11em;
     font-weight: 800;
     font-style: italic;
     color: rgba(0, 0, 0, 0.08);
@@ -60,10 +60,6 @@
     transition: 0.5s;
 }
 
-.card:hover .card__imgBox {
-    top: 0%;
-    transform: translateY(0%);
-}
 
 .card__imgBox-img{
     width: 270px;
@@ -71,6 +67,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(25deg);
+    transition: 0.5s;
+
+}
+
+.card:hover .card__imgBox-img {
+    top: 0%;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .card__bottom{
@@ -81,10 +85,12 @@
     text-align: center;
     transition: 1s;
     z-index: 10;
+    opacity: 0;
 }
 
 .card:hover .card__bottom{
     height: 210px;
+    opacity: 1;
 }
 .card__bottom-title{
     position: relative;
@@ -115,4 +121,24 @@
     height: 26px;
     text-align: center;
     font-size: .9rem;
+}
+
+.color-span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #9bdc28;
+    margin: 0 .5rem;
+}
+
+.color-span:nth-child(2){
+    background: lightskyblue;
+}
+.color-span:nth-child(3){
+    background: hotpink;
+}
+
+.card-button{
+    padding: .5rem 2rem;
+    font-size: 1rem;
 }
